@@ -1,5 +1,21 @@
 #container {
     border: 1px solid black;
-    height: 250px;
-    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    border: 1px solid black;
+    display: flex;
+    width: 25%;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+#btn {
+    display: flex;
+}
+
+button {
+    margin: auto;
 }
