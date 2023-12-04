@@ -1,6 +1,8 @@
 let contain = document.querySelector('#container');
 
-for (let i = 0; i <16; i++) {
+let size = 2;
+
+for (let i = 0; i < size*size; i++) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('box');
     contain.appendChild(newDiv);
@@ -14,21 +16,30 @@ for (i = 0; i < boxColor.length; i++) {
     });
 };
 
-
 let btnQuery = document.querySelector('button');
 
 btnQuery.addEventListener('click', function(e) {
-    let size = prompt('How many tiles would you like?');
 
-    for (let i = 0; i <16; i++) {
+    let boxColor2 = document.querySelectorAll('.box')
+    
+    for (let i = 0; i < size*size; i++) {
+        contain.removeChild(boxColor2[i]);
+    };
+
+    size = prompt('How many tiles would you like?');
+
+    for (let j = 0; j < size * size; j++) {
         const newDiv = document.createElement('div');
         newDiv.classList.add('box');
         contain.appendChild(newDiv);
-    };
-
-/*    for (i = 0; i < boxColor.length * boxColor.length; i++) {
-        boxColor[i].style.width = (100/size) + "%";
+        let newBoxSize = 100/size;
+        let boxColor1 = document.querySelectorAll('.box');
+        boxColor1[j].style.width = `${newBoxSize}%`;
+        
+        boxColor1[j].addEventListener('mouseenter',function(e) {
+            e.target.style.backgroundColor = 'black';
+            });
+        
         };
-*/
-    });
 
+    });
